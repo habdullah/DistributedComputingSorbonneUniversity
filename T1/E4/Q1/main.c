@@ -6,9 +6,6 @@ int main(int argc, char *argv[])
 {
   int size;
   int my_rank;
-  char *predecessor_message;
-  char *message = "I AM YOUR PREDECESSOR";
-
   int i = 100;
 
   MPI_Status status;
