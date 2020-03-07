@@ -13,9 +13,9 @@ int main(int argc, char *argv[])
   MPI_Init(&argc, &argv);
   MPI_Comm_size(MPI_COMM_WORLD, &size);
   MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
-
-  MPI_Send(&i, 1, MPI_INT, (my_rank + 1) % size, 99, MPI_COMM_WORLD);
-
+  /*Syncronous Blocking communication: Transmission ends when Recipient receives message*/
+  MPI_Ssend(&i, 1, MPI_INT, (my_rank + 1) % size, 99, MPI_COMM_WORLD);
+  
   MPI_Recv(&i, 1, MPI_INT, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
 
   printf("I am %d and received %d from %d\n", my_rank, i, status.MPI_SOURCE);
