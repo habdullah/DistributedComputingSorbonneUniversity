@@ -128,7 +128,7 @@ int main(int argc, char *argv[])
           meals_eaten++;
           printf("%d eats a deliciose meal, it's his %d. already, take a break dude. Btw it's time: %d\n", rank, meals_eaten, local_clock);
           // when I am done
-          if (meals_eaten >= NB)
+          if (meals_eaten >= NB_MEALS)
           {
             // I  finish
             local_state = DONE;
